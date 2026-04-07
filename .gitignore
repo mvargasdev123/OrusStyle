@@ -1,0 +1,14 @@
+# Entornos virtuales
+venv/
+env/
+
+# Archivos temporales de Python
+__pycache__/
+*.pyc
+
+# Base de datos local (¡Que no se suban los anillos reales!)
+*.db
+*.sqlite3
+
+# Variables de entorno (donde pondremos las contraseñas luego)
+.env
