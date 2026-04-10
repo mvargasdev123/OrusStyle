@@ -6,6 +6,7 @@ import httpx
 from fastapi import FastAPI, Depends, Form, Request, HTTPException
 from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.templating import Jinja2Templates
+from fastapi.staticfiles import StaticFiles
 from sqlalchemy.orm import Session
 
 # Importamos la configuración y el modelo desde nuestro archivo models.py
@@ -63,6 +64,9 @@ app = FastAPI(title="OrusStyle - Luxury Rings", lifespan=lifespan)
 
 # Configuramos la carpeta "templates" donde estarán nuestras plantillas de diseño web (HTML)
 templates = Jinja2Templates(directory="templates")
+
+# Configuramos la carpeta "static" para servir archivos estáticos como CSS, JS e imágenes
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 # Obtenemos la URL del webhook desde el sistema (para n8n) o usamos una de prueba por defecto
 N8N_WEBHOOK_URL = os.getenv("N8N_WEBHOOK_URL", "https://your-n8n-instance.com/webhook/test")

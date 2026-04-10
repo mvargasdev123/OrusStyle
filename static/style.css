@@ -1,0 +1,36 @@
+/* ============================================== */
+/* ESTILOS GLOBALES Y VARIABLES TAIWIND           */
+/* Aquí definimos estilos que afectan a toda la   */
+/* página y clases personalizadas como .glass     */
+/* ============================================== */
+
+body {
+    /* Define la tipografía base de la página (Inter) */
+    font-family: 'Inter', sans-serif;
+    /* Color de fondo súper oscuro por defecto (Dark Mode) */
+    background-color: #0f0f0f;
+    /* Color de texto base (Gris muy claro/blanco) */
+    color: #f3f4f6;
+}
+
+/* Aplicamos la tipografía elegante serif a todos los encabezados */
+h1,
+h2,
+h3,
+.font-serif {
+    font-family: 'Playfair Display', serif;
+}
+
+/* 
+ * Clase personalizada .glass 
+ * Efecto "Glassmorphism" o vidrio esmerilado que se usa
+ * en las tarjetas de producto, modal, y barra de navegación. 
+ */
+.glass {
+    /* Fondo semi transparente para que se vea ligeramente lo que hay detrás */
+    background: rgba(25, 25, 25, 0.7);
+    /* Difuminado (blur) detrás del elemento, esencial para el efecto de vidrio */
+    backdrop-filter: blur(10px);
+    /* Borde blanquecino apenas visible para dar relieve y textura */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
