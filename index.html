@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orus Style</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- BLOQUE 1: El Header -->
+    <header class="header-main" id="bloque-1">
+        
+        <!-- Fila superior: Los 3 elementos alineados horizontalmente -->
+        <div class="header-top">
+            <div class="logo-left">
+                <!-- Metimos tu h1 aquí para no desperdiciarlo -->
+                <h1>ORUS <span>style</span></h1>
+            </div>
+            
+            <div class="logo-center">
+                <span>[ CALAVERA AQUÍ ]</span>
+            </div>
+            
+            <div class="user-actions">
+            <input type="text" class="search-pill">
+            <!-- Icono de corazón sólido -->
+            <i class="fa-solid fa-heart icon"></i>
+            <!-- Icono de usuario sólido -->
+            <i class="fa-solid fa-user icon"></i>
+            </div>
+        </div>
+
+        <!-- Fila inferior: El menú de navegación -->
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#">ARETES</a></li>
+                <li><a href="#">ANILLOS</a></li>
+                <li><a href="#">COLLARES</a></li>
+                <li><a href="#">PROMOCIONES</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+
+    <main>
+        <!-- BLOQUE 2: El Carrusel/Hero -->
+        <section class="hero-section" id="bloque-2">
+            <!-- Flecha izquierda -->
+            <i class="fa-solid fa-chevron-left arrow-icon left-arrow"></i>
+            
+            <h2 class="placeholder-text" id="texto-carrusel">IMAGEN GIGANTE DE ANILLOS 1</h2>
+            
+            <!-- Flecha derecha -->
+            <i class="fa-solid fa-chevron-right arrow-icon right-arrow"></i>
+        </section>
+
+        <!-- BLOQUE 3: Categorías Hombre/Mujer -->
+        <section class="gender-categories" id="bloque-3">
+            
+            <! -- carta mujer -- > 
+            <div class="gender-card">
+                <div class="image-placeholder lady-bg">
+                    <span>[ ESPACIO FOTO MUJER ]</span>
+                </div>
+                <h3>MUJER</h3>
+            </div>
+
+            <! -- carta hombre -- >
+            <div class="gender-card">
+                <div class="image-placeholder man-bg">
+                    <span>[ ESPACIO FOTO HOMBRE ]</span>
+                </div>
+                <h3>HOMBRE</h3>
+            </div>
+        </section>
+
+        <!-- BLOQUE 4: Subcategorías -->
+        <section class="product-categories" id="bloque-4">
+            
+            <!-- Tarjeta Aretes -->
+            <div class="product-card">
+                <div class="product-bg">
+                    <span>[ FOTO ARETES ]</span>
+                </div>
+                <!-- Sombra mágica para que el texto resalte -->
+                <div class="product-overlay"></div>
+                <h4>ARETES</h4>
+            </div>
+
+            <!-- Tarjeta Anillos -->
+            <div class="product-card">
+                <div class="product-bg">
+                    <span>[ FOTO ANILLOS ]</span>
+                </div>
+                <div class="product-overlay"></div>
+                <h4>ANILLOS</h4>
+            </div>
+
+            <!-- Tarjeta Collares -->
+            <div class="product-card">
+                <div class="product-bg">
+                    <span>[ FOTO COLLARES ]</span>
+                </div>
+                <div class="product-overlay"></div>
+                <h4>COLLARES</h4>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- BLOQUE 5: El Footer -->
+    <footer class="footer-main" id="bloque-5">
+            
+            <!-- Nivel 1: La barra gris de advertencias -->
+            <div class="info-bar">
+                INFORMACION DE ENVIOS, GARANTIA, PAGOS Y MATERIALES
+            </div>
+            
+            <!-- Nivel 2: El abismo oscuro -->
+            <div class="footer-content">
+                
+                <div class="footer-logo">
+                    <!-- Aquí irá ese hermoso logo vectorial algún día -->
+                    <h2 class="placeholder-logo">[ LOGO GIGANTE ORUS ]</h2>
+                </div>
+                
+                <div class="newsletter">
+                    <h3>SUSCRÍBETE PARA PROMOCIONES</h3>
+                    <p>Obtén 10% off en tu primera compra.</p>
+                    <div class="form-group">
+                        <input type="email" placeholder="Deja tu correo electrónico">
+                        <button type="button">ENVIO</button>
+                    </div>
+                </div>
+
+            </div>
+        </footer>
+
+
+    <!-- Conectamos el script al final del body -->
+    <script src="js/main.js"></script>
+</body>
+</html>

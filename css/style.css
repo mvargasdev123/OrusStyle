@@ -1,0 +1,360 @@
+/* =========================================
+    VARIABLES Y RESET
+========================================= */
+:root {
+    --color-bg-dark: #0A0A0A;
+    --color-white: #FFFFFF;
+    --color-gray: #7A7A7A;
+    --color-gold: #D4B60A;
+    --font-main: 'Arial', sans-serif; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-bg-dark);
+    color: var(--color-white);
+    font-family: var(--font-main);
+}
+
+/* =========================================
+    BORDES TEMPORALES (Tus rueditas de entrenamiento)
+========================================= */
+#bloque-1 { padding: 20px 40px; display: flex; flex-direction: column; gap: 30px;}
+#bloque-2 { height: 500px; background-color: #151515; background-image: radial-gradient(circle, #2a2a2a 0%, #0a0a0a 100%); position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden;}
+#bloque-3 { padding: 80px 10%; display: flex; gap: 50px; justify-content: center; }
+#bloque-4 { padding: 60px 10%; display: flex; gap: 30px; justify-content: space-between; }
+#bloque-5 { padding: 20px; text-align: center; }
+
+/* =========================================
+    BLOQUE 1: HEADER
+========================================= */
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo-left, .user-actions {
+    flex: 1; 
+}
+
+.logo-center {
+    flex: 1;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.user-actions {
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+    gap: 15px; 
+    margin-top: 45px; /* El martillazo para bajar la barra */
+}
+
+.search-pill {
+    width: 250px; 
+    height: 35px;
+    border-radius: 50px; 
+    border: none;
+    outline: none;
+    padding: 5px 20px;
+}
+
+.user-actions .icon {
+    color: var(--color-white);
+    font-size: 24px; 
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.user-actions .icon:hover {
+    color: var(--color-gold); 
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 300px; 
+    padding: 0;
+    margin-top: 15px;
+}
+
+.main-nav a {
+    color: var(--color-white);
+    text-decoration: none; 
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px; 
+}
+
+.main-nav a:hover {
+    color: var(--color-gold); 
+}
+
+/* =========================================
+    TARJETAS GENÉRICAS
+========================================= */
+.card {
+    background-color: #1a1a1a;
+    width: 100%;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--color-gray);
+}
+
+/* =========================================
+    BLOQUE 2: HERO SECTION / CARRUSEL
+========================================= */
+
+.placeholder-text {
+    color: var(--color-gray);
+    letter-spacing: 5px;
+    opacity: 0.5;
+    transition: opacity 0.5s ease;
+}
+
+/* Las flechitas del carrusel */
+.arrow-icon {
+    font-size: 40px;
+    color: var(--color-white);
+    cursor: pointer;
+    /* Sacamos a las flechas del flujo normal y las anclamos a la pared */
+    position: absolute; 
+    top: 50%;
+    transform: translateY(-50%); /* Centrado vertical perfecto */
+    transition: all 0.3s ease; /* Transición suave para la animación */
+}
+
+.left-arrow { 
+    left: 30px; 
+}
+
+.right-arrow { 
+    right: 30px; 
+}
+
+.left-arrow:hover { 
+    color: var(--color-gold);
+    transform: translateY(-50%) translateX(-5px); 
+}
+
+.right-arrow:hover { 
+    color: var(--color-gold);
+    transform: translateY(-50%) translateX(5px); 
+}
+
+/* =========================================
+    BLOQUE 3: CATEGORÍAS MUJER Y HOMBRE
+========================================= */
+
+/* El contenedor principal de cada tarjeta */
+.gender-card {
+    width: 45%; /* Casi la mitad del ancho cada una */
+    display: flex;
+    flex-direction: column; /* Apila foto y luego texto */
+    align-items: center; /* Centra el texto debajo de la foto */
+    gap: 30px; /* Espacio entre la foto y la palabra */
+    cursor: pointer;
+}
+
+/* El rectángulo de mentira donde irá la foto real */
+.image-placeholder {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Las obliga a ser cuadrados perfectos */
+    border-radius: 40px; /* Esos bordes super curvos de tu imagen de Figma */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-gray);
+    font-weight: bold;
+    letter-spacing: 2px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Colores falsos para distinguirlas por ahora */
+.lady-bg {
+    background-color: #111;
+    border: 1px solid #333;
+}
+
+.man-bg {
+    background-color: #1a1a1a; 
+    border: 1px solid #444;
+}
+
+/* ANIMACIÓN: El toque que diferencia a un novato de un senior */
+.gender-card:hover .image-placeholder {
+    transform: translateY(-10px); /* La foto flota un poquito hacia arriba */
+    box-shadow: 0 15px 30px rgba(212, 182, 10, 0.1); /* Brillo místico dorado */
+}
+
+/* El texto de HOMBRE / MUJER */
+.gender-card h3 {
+    font-size: 20px;
+    letter-spacing: 4px; /* Las letras muy separadas son sinónimo de caro */
+    color: var(--color-white);
+    transition: color 0.3s ease;
+}
+
+.gender-card:hover h3 {
+    color: var(--color-gold); /* El texto se pinta de oro al hacer hover */
+}
+
+/* =========================================
+    BLOQUE 4: SUBCATEGORÍAS VERTICALES
+========================================= */
+.product-card {
+    width: 31%; /* Se dividen el espacio equitativamente */
+    position: relative; /* ¡Clave! Esto encierra al texto adentro de la tarjeta */
+    border-radius: 30px; /* Bordes suaves estilo Figma */
+    overflow: hidden; /* Todo lo que salga de los bordes curvos será decapitado */
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+/* El cuadro donde irá la foto */
+.product-bg {
+    width: 100%;
+    aspect-ratio: 3 / 4; /* Rectángulo vertical (tipo retrato) */
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-gray);
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+/* El truco sucio: un degradado oscuro que sube desde abajo */
+.product-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to top, rgba(10,10,10,0.9) 0%, transparent 100%);
+    pointer-events: none; /* Así no interfiere si el usuario hace clic */
+}
+
+/* El texto anclado al fondo */
+.product-card h4 {
+    position: absolute; /* Lo sacamos de la fila india y lo dictaminamos nosotros */
+    bottom: 30px; /* Separado 30px del suelo */
+    width: 100%; /* Toma todo el ancho para poder centrarse */
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 3px;
+    color: var(--color-white);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* El hover para deslumbrar a la diseñadora */
+.product-card:hover {
+    transform: translateY(-8px); /* La tarjeta salta un poquito */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.product-card:hover h4 {
+    color: var(--color-gold); /* El toque de Midas al texto */
+    transform: scale(1.1); /* El texto crece un poquito pidiendo atención */
+}
+
+/* =========================================
+    BLOQUE 5: FOOTER
+========================================= */
+
+.footer-main {
+    width: 100%;
+    margin-top: 100px; /* Lo separamos bien del bloque 4 para que respire */
+}
+
+/* La franja gris de la discordia */
+.info-bar {
+    background-color: #dcdcdc; /* Un gris claro, frío y calculador */
+    color: #000;
+    text-align: center;
+    padding: 175px 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+
+/* El fondo oscuro del sótano */
+.footer-content {
+    background-color: #050505; /* Más negro que el alma de un gerente de proyecto */
+    padding: 200px 10%;
+    display: flex;
+    justify-content: space-between; /* Logo a la izquierda, form a la derecha */
+    align-items: center;
+}
+
+/* El logo de mentira */
+.placeholder-logo {
+    font-size: 40px;
+    color: var(--color-white);
+    letter-spacing: 5px;
+    opacity: 0.8;
+}
+
+/* El cajón para atrapar correos */
+.newsletter {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 400px; /* Para que no se estire como chicle */
+}
+
+.newsletter h3 {
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+.newsletter p {
+    color: var(--color-gray);
+    font-size: 14px;
+}
+
+/* Agrupamos el input y el botón en una sola línea */
+.form-group {
+    display: flex;
+    gap: 0; /* Pegaditos para que parezca un solo bloque */
+}
+
+.form-group input {
+    flex: 1; /* Cómete todo el espacio que sobre */
+    background-color: #333; /* Gris oscuro para contrastar */
+    border: none;
+    padding: 15px 20px;
+    color: var(--color-white);
+    outline: none;
+}
+
+.form-group button {
+    background-color: #e0e0e0;
+    color: #000;
+    border: none;
+    padding: 15px 30px;
+    font-weight: bold;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* El toque de Midas cuando quieren enviar su correo */
+.form-group button:hover {
+    background-color: var(--color-gold);
+    color: #000;
+}
